@@ -39,3 +39,20 @@ In **Vite**, files and dependencies (e.g., `react`, `react-dom`) are sent to the
 In **Vite**, the `<script type="module" src="/src/main.jsx">` is needed because Vite serves files as separate ES Modules to the browser. The script tag tells the browser where to start execution (in this case, from `main.jsx`). When the browser requests this file, Vite transpiles it before sending it to the browser. If the browser encounters any import statements in the file, it requests those dependencies from the Vite server, which transpiles and serves them as needed.
 
 In contrast, **CRA** uses **Webpack**, which bundles all files into a single `bundle.js` during the build or development process. Webpack automatically injects this `bundle.js` into the HTML, so there’s no need to manually add a script tag.
+
+## How Vite Updates a File
+
+### After loading:
+- You add `header.jsx` inside `app.jsx`.
+- Vite detects the change, recompiles `app.jsx`, and sends it to the browser (no additional browser request needed).
+- The browser executes the updated `app.js` file and encounters the import statement for `header.jsx`.
+- The browser requests `header.jsx`, Vite transpiles it, and sends it to the browser.
+- The entire `app.js` file reloads, but since only a part of it is updated, the app’s state persists.
+
+### Later, if you edit `header.jsx`:
+- Vite detects the change, recompiles `header.jsx`, and sends it to the browser (no additional browser request needed).
+- The browser updates the app with the new code from `header.jsx`, leaving other files and the app’s state unaffected.
+
+## Why Vite Is Faster
+
+- In development, **Vite** updates only the changed files instead of rebundling the entire app, ensuring faster updates while preserving the app state.
