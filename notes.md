@@ -34,3 +34,8 @@ In **Vite**, files and dependencies (e.g., `react`, `react-dom`) are sent to the
 
 > **Optimized ES module** means the library is pre-processed (e.g., minified, split into smaller parts) for faster loading and efficient use in the browser as an ES module.
 
+## Why Does CRA’s index.html Have No `<script>` Tag?
+
+In **Vite**, the `<script type="module" src="/src/main.jsx">` is needed because Vite serves files as separate ES Modules to the browser. The script tag tells the browser where to start execution (in this case, from `main.jsx`). When the browser requests this file, Vite transpiles it before sending it to the browser. If the browser encounters any import statements in the file, it requests those dependencies from the Vite server, which transpiles and serves them as needed.
+
+In contrast, **CRA** uses **Webpack**, which bundles all files into a single `bundle.js` during the build or development process. Webpack automatically injects this `bundle.js` into the HTML, so there’s no need to manually add a script tag.
