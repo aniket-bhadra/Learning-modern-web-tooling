@@ -25,3 +25,12 @@ For deployment:
 
 - **Webpack**:
   - Source code → transpiled to plain JS → dependencies located in `node_modules` → combined with app code into `bundle.js` → browser downloads and executes the code.
+
+In **Webpack**, all files (app code and dependencies) are bundled into a single `bundle.js`, which the browser downloads and executes.
+
+In **Vite**, files and dependencies (e.g., `react`, `react-dom`) are sent to the browser on demand. When an import statement is encountered, the browser requests the imported file or library from the Vite dev server:
+- If it’s a file (e.g., `App.jsx`), the Vite dev server transpiles it on the fly and sends the transpiled code.
+- If it’s a library (e.g., `react`), the Vite dev server sends it directly as an optimized ES module.
+
+> **Optimized ES module** means the library is pre-processed (e.g., minified, split into smaller parts) for faster loading and efficient use in the browser as an ES module.
+
