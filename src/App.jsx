@@ -6,11 +6,12 @@ import "./App.css";
 
 function App() {
   const [count, setCount] = useState(0);
-  console.log("app")
+  console.log("app");
 
   return (
     <>
       <div>
+        <Header />
         <a href="https://vite.dev" target="_blank">
           <img src={viteLogo} className="logo" alt="Vite logo" />
         </a>

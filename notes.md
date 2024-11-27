@@ -56,3 +56,13 @@ In contrast, **CRA** uses **Webpack**, which bundles all files into a single `bu
 ## Why Vite Is Faster
 
 - In development, **Vite** updates only the changed files instead of rebundling the entire app, ensuring faster updates while preserving the app state.
+
+# Accessing Environment Variables in Vite
+
+To access environment variables in Vite:
+
+1. **Create an `.env` file** in the root directory of your project.
+   
+2. **Access the variable** in your code using:
+   ```javascript
+   import.meta.env.VARIABLE_NAME
