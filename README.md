@@ -1,6 +1,13 @@
-# CRA vs Vite: A Comparison
+# Learning Notes: 
 
-## Webpack (CRA) vs Vite in Development
+## About This Repository  
+This repository serves as a personal resource to document my learning journey as I explore modern web build tools like **Vite** and compare them with **Create React App (CRA)**.  
+
+These notes are primarily created for my own revision and to solidify my understanding of key concepts. However, they are structured in a way that can also help others understand the differences and nuances between these tools.  
+
+## CRA vs Vite: A Comparison
+
+### Webpack (CRA) vs Vite in Development
 
 - **CRA (Create React App)** or **Vue CLI** uses **Webpack**, which:
   - Transpiles source code (e.g., JSX to plain JavaScript).
