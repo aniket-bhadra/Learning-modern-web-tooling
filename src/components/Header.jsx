@@ -1,7 +1,7 @@
 import React from "react";
 
 const Header = () => {
-  return <div>{import.meta.env.VITE_APP_URL_ssssssssss}</div>;
+  return <div>{import.meta.env.VITE_APP_URL}</div>;
 };
 
 export default Header;
